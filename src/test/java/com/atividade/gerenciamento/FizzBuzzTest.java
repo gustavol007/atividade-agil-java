@@ -34,8 +34,8 @@ class FizzBuzzTest {
     }
 
     // ❌ TESTE RED - Este deve falhar no GitHub Actions (descomente para testar)
-    // @Test 
-    // void testeRed_DeveFalhar() {
-    //     assertEquals("Fizz", FizzBuzz.getResultado(25)); // 25 retorna "Buzz", não "Fizz" - FALHA PROPOSITAL
-    // }
+    @Test 
+    void testeRed_DeveFalhar() {
+        assertEquals("Fizz", FizzBuzz.getResultado(25)); // 25 retorna "Buzz", não "Fizz" - FALHA PROPOSITAL
+    }
 }
