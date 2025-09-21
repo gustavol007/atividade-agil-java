@@ -28,20 +28,16 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
         
     - name: Executar testes antes do deploy
-      run: |
-        cd gerenciamento
-        ./mvnw clean test
+      run: ./mvnw clean test
       
     - name: Criar build de produção
-      run: |
-        cd gerenciamento
-        ./mvnw clean package -DskipTests
+      run: ./mvnw clean package -DskipTests
       
     - name: Upload do artefato para release
       uses: actions/upload-artifact@v4
       with:
         name: production-jar
-        path: gerenciamento/target/*.jar
+        path: target/*.jar
         
     # Adicione aqui steps específicos para seu ambiente de deploy
     # Por exemplo: Docker, AWS, Heroku, etc.
